@@ -1,0 +1,112 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    margin: 0;
+    color: white;
+}
+
+.calculator {
+    width: 320px;
+    background-color: #2d2d2d;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+}
+
+.display {
+    padding: 20px;
+    text-align: right;
+    background-color: #222;
+    border-bottom: 1px solid #444;
+}
+
+.display-input {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    min-height: 24px;
+    color: #888;
+}
+
+.display-output {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #444;
+}
+
+button {
+    border: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #3a3a3a;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Button Colors & Glow Effects */
+.btn-number {
+    color: #ffffff;
+}
+
+.btn-number:hover {
+    background-color: #4a4a4a;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.btn-operator {
+    color: #4fc3f7;
+    background-color: #2a3a4a;
+}
+
+.btn-operator:hover {
+    background-color: #3a4a5a;
+    box-shadow: 0 0 20px rgba(79, 195, 247, 0.7);
+}
+
+.btn-equals {
+    color: #66bb6a;
+    background-color: #2a3a2a;
+}
+
+.btn-equals:hover {
+    background-color: #3a4a3a;
+    box-shadow: 0 0 20px rgba(102, 187, 106, 0.7);
+}
+
+.btn-clear, .btn-backspace {
+    color: #ef5350;
+    background-color: #3a2a2a;
+}
+
+.btn-clear:hover, .btn-backspace:hover {
+    background-color: #4a3a3a;
+    box-shadow: 0 0 20px rgba(239, 83, 80, 0.7);
+}
+
+.span-2 {
+    grid-column: span 2;
+}

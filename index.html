@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Calculator</title>
+    <link rel="stylesheet" href="calcstyles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="display-input" id="input">0</div>
+            <div class="display-output" id="output">0</div>
+        </div>
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="btn-clear" onclick="clearDisplay()">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"/></svg>
+            </button>
+            <button class="btn-backspace" onclick="backspace()">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13"/></svg>
+            </button>
+            <button class="btn-operator" onclick="appendOperator('/')">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M19,13H5V11H19V13Z" /></svg>
+            </button>
+            <button class="btn-operator" onclick="appendOperator('*')">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M11,13H13V16H16V18H13V21H11V18H8V16H11V13M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/></svg>
+            </button>
+
+            <!-- Row 2 -->
+            <button class="btn-number" onclick="appendNumber('7')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">7</text></svg>
+            </button>
+            <button class="btn-number" onclick="appendNumber('8')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">8</text></svg>
+            </button>
+            <button class="btn-number" onclick="appendNumber('9')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">9</text></svg>
+            </button>
+            <button class="btn-operator" onclick="appendOperator('-')">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M19,13H5V11H19V13Z" /></svg>
+            </button>
+
+            <!-- Row 3 -->
+            <button class="btn-number" onclick="appendNumber('4')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">4</text></svg>
+            </button>
+            <button class="btn-number" onclick="appendNumber('5')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">5</text></svg>
+            </button>
+            <button class="btn-number" onclick="appendNumber('6')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">6</text></svg>
+            </button>
+            <button class="btn-operator" onclick="appendOperator('+')">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+            </button>
+
+            <!-- Row 4 -->
+            <button class="btn-number" onclick="appendNumber('1')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">1</text></svg>
+            </button>
+            <button class="btn-number" onclick="appendNumber('2')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">2</text></svg>
+            </button>
+            <button class="btn-number" onclick="appendNumber('3')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">3</text></svg>
+            </button>
+            <button class="btn-equals" onclick="calculate()">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z"/></svg>
+            </button>
+
+            <!-- Row 5 -->
+            <button class="btn-number span-2" onclick="appendNumber('0')">
+                <svg class="icon" viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="20">0</text></svg>
+            </button>
+            <button class="btn-number" onclick="appendNumber('.')" >
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="18" r="2"/></svg>
+            </button>
+            <button class="btn-operator" onclick="appendOperator('%')">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M7,4H17V6H7V4M7,8H17V10H7V8M7,12H17V14H7V12M7,16H17V18H7V16M4.5,8A3.5,3.5 0 0,1 8,11.5A3.5,3.5 0 0,1 4.5,15A3.5,3.5 0 0,1 1,11.5A3.5,3.5 0 0,1 4.5,8M19.5,8A3.5,3.5 0 0,1 23,11.5A3.5,3.5 0 0,1 19.5,15A3.5,3.5 0 0,1 16,11.5A3.5,3.5 0 0,1 19.5,8Z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="calcscript.js"></script>
+</body>
+</html>
